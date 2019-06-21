@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.DisplayCutout;
 import android.view.View;
 import android.view.Window;
@@ -26,8 +27,8 @@ public class DisplayCutoutActivity extends Activity {
         //1.判断手机厂商， 2，判断手机是否刘海， 3，设置是否让内容区域延伸进刘海 4，设置控件是否避开刘海区域  5， 获取刘海的高度
 
         //判断手机是否是刘海屏
-        boolean hasDisplayCutout = hasDisplayCutout(window);
-        if (hasDisplayCutout){
+//        boolean hasDisplayCutout = hasDisplayCutout(window);
+//        if (hasDisplayCutout){
             //2.让内容区域延伸进刘海
             WindowManager.LayoutParams params = window.getAttributes();
             /**
@@ -45,7 +46,7 @@ public class DisplayCutoutActivity extends Activity {
             int visibility = window.getDecorView().getSystemUiVisibility();
             visibility |= flags; //追加沉浸式设置
             window.getDecorView().setSystemUiVisibility(visibility);
-        }
+//        }
 
         setContentView(R.layout.activity_cutout);
 
@@ -54,8 +55,8 @@ public class DisplayCutoutActivity extends Activity {
 //        layoutParams.topMargin = heightForDisplayCutout();
 //        button.setLayoutParams(layoutParams);
 
-        RelativeLayout layout = findViewById(R.id.container);
-        layout.setPadding(layout.getPaddingLeft(), heightForDisplayCutout(), layout.getPaddingRight(), layout.getPaddingBottom());
+//        RelativeLayout layout = findViewById(R.id.container);
+//        layout.setPadding(layout.getPaddingLeft(), heightForDisplayCutout(), layout.getPaddingRight(), layout.getPaddingBottom());
     }
 
     private boolean hasDisplayCutout(Window window) {
