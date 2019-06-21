@@ -41,7 +41,7 @@ public class Density {
         //计算目标值density, scaleDensity, densityDpi
         float targetDensity = displayMetrics.widthPixels / WIDTH; // 1080 / 360 = 3.0
         float targetScaleDensity = targetDensity * (appScaleDensity / appDensity);
-        int targetDensityDpi = (int) (targetDensity * 160);//屏幕上每一寸有160个像素点
+        int targetDensityDpi = (int) (targetDensity * 160);//屏幕上每一寸有160个像素点*密度得到真实像素多少个
 
         //替换Activity的density, scaleDensity, densityDpi
         DisplayMetrics dm = activity.getResources().getDisplayMetrics();
